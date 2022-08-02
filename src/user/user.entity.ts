@@ -1,5 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Departments } from "src/department/entities/department.entity";
 @Entity()
 export class User {
     @PrimaryGeneratedColumn()
@@ -30,6 +30,10 @@ export class User {
     isEmailVerified:number;
 
     
-
+    @OneToOne(() => Departments)
+    @JoinColumn({
+     
+    })
+    department_id: Departments
 
 }

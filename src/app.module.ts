@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { User } from './user/user.entity';
 import { TypeOrmModule } from '@nestjs/typeorm'; 
 import { DepartmentModule } from './department/department.module';
+import { Departments } from './department/entities/department.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -16,7 +17,7 @@ import { DepartmentModule } from './department/department.module';
       username: 'root',
       password: '',
       database: 'students_profile',
-      entities: [User, ],
+      entities: [User,Departments ],
       synchronize: true,
     }),
     
